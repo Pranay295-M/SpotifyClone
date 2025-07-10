@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+  </head>
+  <body>
+    <div class="container flex bg-black">
+      <div class="left">
+        <div class="home bg-gray rounded m-1 p-1">
+          <div class="logo">
+            <img class="cancel" src="img/cancel.svg" alt="Menu" />
+            <img class="invert" src="img/logo.svg" alt="Logo" srcset="" />
+          </div>
+          <ul>
+            <li><img class="invert" src="img/home.svg" alt="home" />Home</li>
+            <li>
+              <img class="invert" src="img/search.svg" alt="search" />Search
+            </li>
+          </ul>
+        </div>
+        <div class="library bg-gray rounded m-1 p-1">
+          <div class="heading">
+            <img
+              class="invert"
+              src="img/playlist.svg"
+              alt="playlist"
+              srcset=""
+            />
+            <h2>Your Library</h2>
+          </div>
+          <div class="footer">
+            <div>
+              <a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a>
+            </div>
+            <div>
+              <a href="https://www.spotify.com/jp/privacy/"
+                ><span>Privacy Center</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/jp/legal/privacy-policy/"
+                ><span>Privacy Policy</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/jp/legal/cookies-policy/"
+                ><span>Cookies</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"
+                ><span>About Ads</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/jp/accessibility/"
+                ><span>Accessibility</span></a
+              >
+            </div>
+          </div>
+          <div class="songList">
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+      <div class="right bg-gray rounded">
+        <div class="header">
+          <div class="nav">
+            <img class="hamburger" src="img/hamburger.svg" alt="Menu" />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="button">
+            <button class="signb">Sign up</button>
+            <button class="loginb">Login</button>
+          </div>
+        </div>
+        <div class="spotifyPlaylist">
+          <h1>Spotify Playlist</h1>
+          <div class="cardContainer">
+            <div data-folder="first" class="card">
+              <div class="play">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+                  <!-- Green circular background -->
+                  <circle cx="60" cy="60" r="60" fill="#40eb29" />
+
+                  <!-- Centered black play icon -->
+                  <g transform="translate(34, 24) scale(0.6)">
+                    <polygon
+                      fill="#000000"
+                      points="92.2,60.97 0,122.88 0,0 92.2,60.97"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <img
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+              <h2>Happy Hits!</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni,
+                cum.
+              </p>
+            </div>
+            <div data-folder="second" class="card">
+              <div class="play">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+                  <!-- Green circular background -->
+                  <circle cx="60" cy="60" r="60" fill="#40eb29" />
+
+                  <!-- Centered black play icon -->
+                  <g transform="translate(34, 24) scale(0.6)">
+                    <polygon
+                      fill="#000000"
+                      points="92.2,60.97 0,122.88 0,0 92.2,60.97"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <img
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+              <h2>Happy Hits!</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni,
+                cum.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="playbar">
+          <div class="seekbar">
+            <div class="circle"></div>
+          </div>
+          <div class="playin">
+            <div class="songn"></div>
+            <div class="songbut">
+              <img id="prev" src="/img/previous.svg" alt="" style="width: 40px;" />
+              <img id="play" src="/img/play.svg" style="width: 40px" />
+              <img id="next" src="/img/next.svg" alt="" style="width: 40px;"/>
+            </div>
+            <div class="songt"></div>
+            <div class="songv">
+              <img src="/img/volume.svg" alt="" srcset=""><div><input class="volume" type="range"></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
